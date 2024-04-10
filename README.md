@@ -23,3 +23,8 @@ Usage Examples
 To built any of the example files located in [examples](examples):
 * `> cd examples`
 * `> ./build_example.sh <filename without extension>`, i.e. `./build_example.sh linreg_single_toy`. The executable will be built into `./build/`.
+
+---
+Documentation
+
+[Full classes and files documentation](https://ezmldocs-1-z1750187.deta.app)
