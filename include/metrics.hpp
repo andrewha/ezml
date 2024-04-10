@@ -24,11 +24,10 @@ namespace Metrics
     /**
      * @brief Compute Mean Squared Error of predictions.
      * 
-     * \f$ \displaystyle MSE = \frac{1}{N} \sum_{i=1}^{m} (y_{i} - \hat{y_{i}}) \f$,
+     * \f$ \displaystyle MSE = \frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y_{i}})^2 \f$,
      * where \f$ y \f$ is the target vector, 
      * \f$ \hat{y} \f$ is model's predictions vector, 
-     * \f$ N \f$ is the number of features, 
-     * \f$ m \f$ is the number of observations.
+     * \f$ n \f$ is the number of predictions.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
@@ -42,10 +41,10 @@ namespace Metrics
     /**
      * @brief Compute Sum Squared Error of predictions.
      * 
-     * \f$ \displaystyle SSE = \sum_{i=1}^{m} (y_{i} - \hat{y_{i}}) \f$,
+     * \f$ \displaystyle SSE = \sum_{i=1}^{n} (y_{i} - \hat{y_{i}})^2 \f$,
      * where \f$ y \f$ is the target vector, 
      * \f$ \hat{y} \f$ is model's predictions vector, 
-     * \f$ N \f$ is the number of features.
+     * \f$ n \f$ is the number of predictions.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
@@ -57,12 +56,12 @@ namespace Metrics
     }
 
     /**
-     * @brief Compute Sum Squared Total variance of target.
+     * @brief Compute Sum Squared Total variance of target. In fact, \f$ n Var(y) \f$.
      * 
-     * \f$ \displaystyle SST = \sum_{i=1}^{m} (y_{i} - \bar{y}) \f$,
+     * \f$ \displaystyle SST = \sum_{i=1}^{n} (y_{i} - \bar{y})^2 \f$,
      * where \f$ y \f$ is the target vector, 
      * \f$ \bar{y} \f$ is target vector's mean, 
-     * \f$ m \f$ is the number of observations.
+     * \f$ n \f$ is the number of predictions.
      * 
      * @param y_true Column vector of ground truth target
      * @return double 
@@ -91,10 +90,10 @@ namespace Metrics
     /**
      * @brief Normalized accuracy score of predictions for binary classifier.
      * 
-     * \f$ \displaystyle Acc = \frac{1}{m} \sum_{i=1}^{m} [\hat{y} = y] \f$,
+     * \f$ \displaystyle Acc = \frac{1}{n} \sum_{i=1}^{n} [\hat{y} = y] \f$,
      * where \f$ y \f$ is the target vector, 
      * \f$ \hat{y} \f$ is the model's predictions vector, 
-     * \f$ m \f$ is the number of observations.
+     * \f$ n \f$ is the number of predictions.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
