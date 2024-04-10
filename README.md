@@ -1,7 +1,6 @@
 Welcome to the EasyML library! EasyML is a set of classic machine learning algorithms written in C++. It extensively uses the Armadillo library which in turn uses the LAPACK library to work with vectors and matrices. Boost is also used, but merely for one single functionality: obtain object's human-readable type during runtime. Be sure to install them first.
 
 Supported models and solvers:
-
 - Linear Regression
   - Ordinary Least Squares
   - QR-decomposition
@@ -9,7 +8,10 @@ Supported models and solvers:
 - Logistic Regression
   - Derivative-based: Gradient Descent, Newton (single feature only)
 
-More models to be covered in future versions.
+Supported transformers:
+- Standard scaler ($z$-score transformation)
+
+More models and possibly transformers to be implemented in future versions.
 
 ---
 Installation for Linux
