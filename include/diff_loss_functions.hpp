@@ -109,7 +109,9 @@ namespace DiffLoss
      * @brief Laplacian (second derivative) of Log Likelihood loss.
      * 
      * \f$ \displaystyle \nabla (\nabla L_{LOG}) =  \frac{1}{n} \sum_{i=1}^{n} X^T \hat{y_{i}} (1 - \hat{y_{i}})^T \f$,
-     * where \f$ n \f$ is the number of predictions.
+     * where \f$ X \f$ is the features matrix,
+     * \f$ \hat{y} \f$ is the model's predictions vector, 
+     * \f$ n \f$ is the number of predictions.
      * 
      * @param w Row vector of weights
      * @param X Matrix of feature variables
