@@ -26,12 +26,11 @@ namespace DiffLoss
     /**
      * @brief Gradient (first derivative) of Mean Squared Error loss.
      *
-     * \f$ \displaystyle \nabla L_{MSE} = -\frac{2}{N} \sum_{i=1}^{m} X^T (y_{i} - \hat{y_{i}}) \f$,
+     * \f$ \displaystyle \nabla L_{MSE} = -\frac{2}{n} \sum_{i=1}^{n} X^T (y_{i} - \hat{y_{i}}) \f$,
      * where \f$ X \f$ is the features matrix,
      * \f$ y \f$ is the target vector, 
      * \f$ \hat{y} \f$ is the model's predictions vector, 
-     * \f$ N \f$ is the number of features, 
-     * \f$ m \f$ is the number of observations.
+     * \f$ n \f$ is the number of predictions.
      * 
      * @param w Row vector of weights
      * @param X Matrix of feature variables
@@ -48,9 +47,9 @@ namespace DiffLoss
     /**
      * @brief Laplacian (second derivative) of Mean Squared Error loss.
      * 
-     * \f$ \displaystyle \nabla (\nabla L_{MSE}) = \frac{2}{N} \sum X^T X \f$,
+     * \f$ \displaystyle \nabla (\nabla L_{MSE}) = \frac{2}{n} \sum X^T X \f$,
      * where \f$ X \f$ is the features matrix,
-     * \f$ N \f$ is the number of features.
+     * \f$ n \f$ is the number of observations.
      * 
      * @param X Matrix of feature variables
      * @return const Derivative 
@@ -88,12 +87,11 @@ namespace DiffLoss
     /**
      * @brief Gradient (first derivative) of Log Likelihood loss.
      * 
-     * \f$ \displaystyle \nabla L_{LOG} = -\frac{1}{N} \sum_{i=1}^{m} X^T (y_{i} - \hat{y_{i}}) \f$,
+     * \f$ \displaystyle \nabla L_{LOG} = -\frac{1}{n} \sum_{i=1}^{n} X^T (y_{i} - \hat{y_{i}}) \f$,
      * where \f$ X \f$ is the features matrix,
      * \f$ y \f$ is the target vector, 
      * \f$ \hat{y} \f$ is the model's predictions vector, 
-     * \f$ N \f$ is the number of features, 
-     * \f$ m \f$ is the number of observations.
+     * \f$ n \f$ is the number of predictions.
      * 
      * @param w Row vector of weights
      * @param X Matrix of feature variables
@@ -110,8 +108,8 @@ namespace DiffLoss
     /**
      * @brief Laplacian (second derivative) of Log Likelihood loss.
      * 
-     * \f$ \displaystyle \nabla (\nabla L_{LOG}) =  \frac{1}{N} \sum_{i=1}^{m} X^T \hat{y_{i}} (1 - \hat{y_{i}})^T \f$,
-     * where \f$ N \f$ is the number of features, \f$ m \f$ is the number of observations.
+     * \f$ \displaystyle \nabla (\nabla L_{LOG}) =  \frac{1}{n} \sum_{i=1}^{n} X^T \hat{y_{i}} (1 - \hat{y_{i}})^T \f$,
+     * where \f$ n \f$ is the number of predictions.
      * 
      * @param w Row vector of weights
      * @param X Matrix of feature variables
