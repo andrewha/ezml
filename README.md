@@ -1,4 +1,4 @@
-Welcome to the EasyML library! EasyML is a set of classic machine learning algorithms written in C++. It extensively uses the [Armadillo](https://arma.sourceforge.net/) library which in turn uses the LAPACK library to work with vectors and matrices. [Boost](https://www.boost.org/) is also used, for example, to obtain object's human-readable type during runtime and to work with distributions. Be sure to install them first.
+Welcome to the EasyML library! EasyML is a set of classic machine learning algorithms written in C++. It extensively uses the [Armadillo](https://arma.sourceforge.net/) library which in turn uses the LAPACK library to work with vectors and matrices. [Boost](https://www.boost.org/) is also used, for example, to obtain object's human-readable type during runtime and to work with probability distributions. Be sure to install them first.
 
 Supported models and solvers:
 - Linear Regression
