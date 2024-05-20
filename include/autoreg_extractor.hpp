@@ -18,7 +18,6 @@ using namespace Types;
 
 /**
  * @brief Features and target extractor class for Autoregressive AR(p) model.
- * Extracts features and target variables from time series with lag of order p to use in `AutoRegModel`.
  * 
  */
 class AutoRegExtractor
