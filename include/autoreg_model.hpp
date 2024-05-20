@@ -31,7 +31,6 @@ class AutoRegModel : public BaseModel
          * @brief Construct a new AutoRegModel object
          * 
          * @param solver Solver type
-         * @param p Model's order (lag)
          */
         AutoRegModel(const SolverType& solver);
 
