@@ -24,7 +24,7 @@ namespace Metrics
     /**
      * @brief Compute Mean Squared Error of predictions.
      * 
-     * \f$ \displaystyle MSE = \frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y_{i}})^2 \f$,
+     * \f$ \displaystyle MSE(y, \hat{y}) = \frac{1}{n} \sum_{i=1}^{n} (y_{i} - \hat{y_{i}})^2 \f$,
      * where \f$ y \f$ is the target vector, 
      * \f$ \hat{y} \f$ is model's predictions vector, 
      * \f$ n \f$ is the number of predictions.
@@ -39,9 +39,9 @@ namespace Metrics
     }
 
     /**
-     * @brief Compute Sum Squared Error of predictions.
+     * @brief Compute Sum Squared Error of predictions. In fact, \f$ n MSE(y, \hat{y}) \f$.
      * 
-     * \f$ \displaystyle SSE = \sum_{i=1}^{n} (y_{i} - \hat{y_{i}})^2 \f$,
+     * \f$ \displaystyle SSE(y, \hat{y}) = \sum_{i=1}^{n} (y_{i} - \hat{y_{i}})^2 \f$,
      * where \f$ y \f$ is the target vector, 
      * \f$ \hat{y} \f$ is model's predictions vector, 
      * \f$ n \f$ is the number of predictions.
@@ -58,7 +58,7 @@ namespace Metrics
     /**
      * @brief Compute Sum Squared Total variance of target. In fact, \f$ n Var(y) \f$.
      * 
-     * \f$ \displaystyle SST = \sum_{i=1}^{n} (y_{i} - \bar{y})^2 \f$,
+     * \f$ \displaystyle SST(y) = \sum_{i=1}^{n} (y_{i} - \bar{y})^2 \f$,
      * where \f$ y \f$ is the target vector, 
      * \f$ \bar{y} \f$ is target vector's mean, 
      * \f$ n \f$ is the number of predictions.
@@ -74,9 +74,11 @@ namespace Metrics
     /**
      * @brief Coefficient of determination of predictions.
      * 
-     * \f$ \displaystyle R^2 = 1 - \frac{SSE}{SST} \f$,
+     * \f$ \displaystyle R^2 = 1 - \frac{SSE(y, \hat{y})}{SST(y)} \f$.
+     * Can also be expressed as \f$ \displaystyle R^2 = 1 - \frac{n MSE(y, \hat{y})}{n Var(y)} = 1 - \frac{MSE(y, \hat{y})}{Var(y)} \f$,
      * where \f$ SSE \f$ is `Metrics::sse`,
-     * \f$ SST \f$ is `Metrics::sst`.
+     * \f$ SST \f$ is `Metrics::sst`,
+     * \f$ MSE \f$ is `Metrics::mse`.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
