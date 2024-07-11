@@ -35,3 +35,10 @@ To built any of the example files located in [examples](examples):
 Documentation
 
 [Full classes and files documentation](https://ezmldocs-1-z1750187.deta.app)
+
+---
+Libraries, tools, and OS
+
+C++ | Armadillo | LAPACK | Boost | Bash | Linux
+----|-----------|--------|-------|------|------
+<img src="https://github.com/devicons/devicon/blob/master/icons/cplusplus/cplusplus-original.svg" alt="C++" width="75"/> | <img src="https://gitlab.com/uploads/-/system/project/avatar/6604173/armadillo_logo2.png" alt="Armadillo" width="75"/> | <img src="https://github.com/Reference-LAPACK/lapack/blob/master/DOCS/lapack.png" alt="LAPACK" width="75"/> | <img src="https://github.com/boostorg/boost/blob/master/boost.png" alt="Boost" width="75"/> | <img src="https://github.com/devicons/devicon/blob/master/icons/bash/bash-original.svg" alt="Bash" width="75"/> | <img src="https://github.com/devicons/devicon/blob/master/icons/linux/linux-original.svg" alt="Linux" width="75"/>
