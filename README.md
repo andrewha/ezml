@@ -34,7 +34,7 @@ To built any of the example files located in [examples](examples):
 ---
 Documentation
 
-[Full classes and files documentation](https://ezmldocs-1-z1750187.deta.app)
+You can browse the full classes and files doxygen documentation in the [docs/html](https://github.com/andrewha/ezml/tree/main/docs/html)
 
 ---
 Libraries, tools, and OS
