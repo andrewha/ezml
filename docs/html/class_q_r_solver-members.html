@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EasyML Library: Documentation</title>
+<title>EasyML Library: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,7 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,40 +77,22 @@ $(function() {
 </div>
 </div>
 
-<div><div class="header">
-  <div class="headertitle"><div class="title">Documentation </div></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">QRSolver Member List</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Welcome to the EasyML library documentation! EasyML is a set of classic machine learning algorithms written in C++. It extensively uses the <a href="https://arma.sourceforge.net/">Armadillo</a> library which in turn uses the LAPACK library to work with vectors and matrices. <a href="https://www.boost.org/">Boost</a> is also used, for example, to obtain object's human-readable type during runtime and to work with probability distributions.</p>
-<p>Supported models and solvers:</p><ul>
-<li>Linear Regression<ul>
-<li>Ordinary Least Squares</li>
-<li>QR-decomposition</li>
-<li>Derivative-based: Gradient Descent, Newton (single feature only)</li>
-</ul>
-</li>
-<li>Logistic Regression<ul>
-<li>Derivative-based: Gradient Descent, Newton (single feature only)</li>
-</ul>
-</li>
-<li>Autoregressive AR(p)<ul>
-<li>Ordinary Least Squares</li>
-<li>QR-decomposition</li>
-<li>Derivative-based: Gradient Descent, Newton (single lag only)</li>
-</ul>
-</li>
-</ul>
-<p>Supported transformers and extractors:</p><ul>
-<li>Standard scaler ( \(z\)-score transformation)</li>
-<li>Time series (extract features and target from process)</li>
-</ul>
-<p>More models and possibly transformers to be implemented in future versions.</p>
-<p>Installation instructions and examples of usage can be found in the GitHub <a href="https://github.com/andrewha/ezml">repo</a> of the author.</p>
-<p>A good way to start is to browse the Class Hierarchy section.</p>
-<p>Author: Andrei Batyrov (<a href="#" onclick="location.href='mai'+'lto:'+'arb'+'at'+'yro'+'v@'+'edu'+'.h'+'se.'+'ru'; return false;">arbat<span class="obfuscator">.nosp@m.</span>yrov<span class="obfuscator">.nosp@m.</span>@edu.<span class="obfuscator">.nosp@m.</span>hse.<span class="obfuscator">.nosp@m.</span>ru</a>)</p>
-<p>Copyright (c) 2024 </p>
-</div></div><!-- PageDoc -->
-</div><!-- contents -->
+
+<p>This is the complete list of members for <a class="el" href="class_q_r_solver.html">QRSolver</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="class_base_solver.html#a9cd404d0e5c582243a476207760a086b">BaseSolver</a>(const bool verbose=false)</td><td class="entry"><a class="el" href="class_base_solver.html">BaseSolver</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_base_solver.html#a98108f30d413542b46634b0c85ba7d52">get_name</a>() const</td><td class="entry"><a class="el" href="class_base_solver.html">BaseSolver</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_base_solver.html#abefc9516293fc8de4cfd7d559300cf12">name_</a></td><td class="entry"><a class="el" href="class_base_solver.html">BaseSolver</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_q_r_solver.html#a335c8809c5b035bd37611dbe979a9a52">optimize</a>(Weights &amp;w, const Features &amp;X, const Target &amp;y)</td><td class="entry"><a class="el" href="class_q_r_solver.html">QRSolver</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_q_r_solver.html#a67c6919d27c305366c9656b2138e3b30">QRSolver</a>()</td><td class="entry"><a class="el" href="class_q_r_solver.html">QRSolver</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_base_solver.html#a4fdfe10a954ab8766214f863122c6f35">verbose_</a></td><td class="entry"><a class="el" href="class_base_solver.html">BaseSolver</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_base_solver.html#a9ee030c2f7b177a2c165fa335f43140a">~BaseSolver</a>()</td><td class="entry"><a class="el" href="class_base_solver.html">BaseSolver</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+</table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7

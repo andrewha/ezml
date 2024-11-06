@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EasyML Library: Documentation</title>
+<title>EasyML Library: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,7 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -78,40 +77,25 @@ $(function() {
 </div>
 </div>
 
-<div><div class="header">
-  <div class="headertitle"><div class="title">Documentation </div></div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">BaseModel Member List</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Welcome to the EasyML library documentation! EasyML is a set of classic machine learning algorithms written in C++. It extensively uses the <a href="https://arma.sourceforge.net/">Armadillo</a> library which in turn uses the LAPACK library to work with vectors and matrices. <a href="https://www.boost.org/">Boost</a> is also used, for example, to obtain object's human-readable type during runtime and to work with probability distributions.</p>
-<p>Supported models and solvers:</p><ul>
-<li>Linear Regression<ul>
-<li>Ordinary Least Squares</li>
-<li>QR-decomposition</li>
-<li>Derivative-based: Gradient Descent, Newton (single feature only)</li>
-</ul>
-</li>
-<li>Logistic Regression<ul>
-<li>Derivative-based: Gradient Descent, Newton (single feature only)</li>
-</ul>
-</li>
-<li>Autoregressive AR(p)<ul>
-<li>Ordinary Least Squares</li>
-<li>QR-decomposition</li>
-<li>Derivative-based: Gradient Descent, Newton (single lag only)</li>
-</ul>
-</li>
-</ul>
-<p>Supported transformers and extractors:</p><ul>
-<li>Standard scaler ( \(z\)-score transformation)</li>
-<li>Time series (extract features and target from process)</li>
-</ul>
-<p>More models and possibly transformers to be implemented in future versions.</p>
-<p>Installation instructions and examples of usage can be found in the GitHub <a href="https://github.com/andrewha/ezml">repo</a> of the author.</p>
-<p>A good way to start is to browse the Class Hierarchy section.</p>
-<p>Author: Andrei Batyrov (<a href="#" onclick="location.href='mai'+'lto:'+'arb'+'at'+'yro'+'v@'+'edu'+'.h'+'se.'+'ru'; return false;">arbat<span class="obfuscator">.nosp@m.</span>yrov<span class="obfuscator">.nosp@m.</span>@edu.<span class="obfuscator">.nosp@m.</span>hse.<span class="obfuscator">.nosp@m.</span>ru</a>)</p>
-<p>Copyright (c) 2024 </p>
-</div></div><!-- PageDoc -->
-</div><!-- contents -->
+
+<p>This is the complete list of members for <a class="el" href="class_base_model.html">BaseModel</a>, including all inherited members.</p>
+<table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="class_base_model.html#a8e9c9d6d5ff39a7db2788affdd2c9de2">BaseModel</a>()</td><td class="entry"><a class="el" href="class_base_model.html">BaseModel</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_base_model.html#a4cd78b1c9a7ea9ac05749d85756b754d">fit</a>(const Features &amp;X, const Target &amp;y)</td><td class="entry"><a class="el" href="class_base_model.html">BaseModel</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_base_model.html#a8fc7ee6f148245f8fcf03862fa3be3c6">fitted_</a></td><td class="entry"><a class="el" href="class_base_model.html">BaseModel</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_base_model.html#a56d533c2eded6d7c32cd2f807b60834c">get_name</a>() const</td><td class="entry"><a class="el" href="class_base_model.html">BaseModel</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_base_model.html#a2fb5eb9ce1403510bed408aa46805a80">is_fitted</a>() const</td><td class="entry"><a class="el" href="class_base_model.html">BaseModel</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_base_model.html#af77b016925d642a8256ad0bee3949426">mark_as_fitted_</a>()</td><td class="entry"><a class="el" href="class_base_model.html">BaseModel</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_base_model.html#a87ee6ed4b294acd665ec88129ffbda8a">name_</a></td><td class="entry"><a class="el" href="class_base_model.html">BaseModel</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_base_model.html#a2c5b92b9c63584aa24431a2165b2102b">predict</a>(const Features &amp;X) const</td><td class="entry"><a class="el" href="class_base_model.html">BaseModel</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_base_model.html#a1db76ee9678715ff0feaade45aebf162">y_mean_</a></td><td class="entry"><a class="el" href="class_base_model.html">BaseModel</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="class_base_model.html#a74fea2a586c7e014ed0286f3b5ace004">~BaseModel</a>()</td><td class="entry"><a class="el" href="class_base_model.html">BaseModel</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+</table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
