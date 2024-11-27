@@ -7,7 +7,7 @@ TARGET="./bin/static"
 
 # -O3 -- max speed optimization
 
-CFLAGS="-fdiagnostics-color=always -c -g -O3 -std=c++17 -Wall"
+CFLAGS="-fdiagnostics-color=always -c -g -O3 -ffast-math -std=c++17 -Wall"
 INCLUDE="./include"
 SRC="./src"
 
