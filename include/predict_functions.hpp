@@ -30,7 +30,7 @@ namespace Predict
      * 
      * @param X Matrix of feature variables
      * @param w Row vector of weights
-     * @return const Target 
+     * @return const Types::Target 
      */
     static const Target linreg(const Features& X, const Weights& w)
     {    
@@ -44,11 +44,11 @@ namespace Predict
      * \f$ \displaystyle \sigma(z) = \frac{1}{1 + e^{-z}} \f$
      * 
      * @param z Column vector of target variable
-     * @return const Target 
+     * @return const Types::Target 
      */
     static const Target logistic_function(const Target& z)
     {
-        return 1 / (1 + arma::exp(-z));
+        return 1.0 / (1.0 + arma::exp(-z));
     }
 
     /**
@@ -62,7 +62,7 @@ namespace Predict
      * 
      * @param X Matrix of feature variables
      * @param w Row vector of weights
-     * @return const Target 
+     * @return const Types::Target 
      */
     static const Target logreg_proba(const Features& X, const Weights& w)
     {    
@@ -81,7 +81,7 @@ namespace Predict
      * 
      * @param y_pred_proba Predicted probability of positive class
      * @param threshold Decision threshold
-     * @return const Target 
+     * @return const Types::Target 
      */
     static const Target logreg_class(const Target& y_pred_proba, const double threshold)
     {    
@@ -103,7 +103,7 @@ namespace Predict
      * Otherwise, its inverse is undefined, and thus solution is also undefined 
      * @param X Matrix of feature variables
      * @param y_true Column vector of target variable
-     * @return const Weights 
+     * @return const Types::Weights 
      */
     static const Weights ols(const Features& X, const Target& y_true)
     {
@@ -124,7 +124,7 @@ namespace Predict
      *
      * @param X Matrix of feature variables
      * @param y_true Column vector of target variable
-     * @return const Weights 
+     * @return const Types::Weights 
      */
     static const Weights qr(const Features& X, const Target& y_true)
     {
