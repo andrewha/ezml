@@ -31,7 +31,7 @@ namespace Metrics
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
-     * @return double 
+     * @return const double
      */
     static const double mse(const Target& y_true, const Target& y_pred)
     {
@@ -48,7 +48,7 @@ namespace Metrics
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
-     * @return double 
+     * @return const double 
      */
     static const double sse(const Target& y_true, const Target& y_pred)
     {
@@ -64,7 +64,7 @@ namespace Metrics
      * \f$ n \f$ is the number of predictions.
      * 
      * @param y_true Column vector of ground truth target
-     * @return double 
+     * @return const double 
      */
     static const double sst(const Target& y_true)
     {
@@ -76,17 +76,17 @@ namespace Metrics
      * 
      * \f$ \displaystyle R^2 = 1 - \frac{SSE(y, \hat{y})}{SST(y)} \f$.
      * Can also be expressed as \f$ \displaystyle R^2 = 1 - \frac{n MSE(y, \hat{y})}{n Var(y)} = 1 - \frac{MSE(y, \hat{y})}{Var(y)} \f$,
-     * where \f$ SSE \f$ is `Metrics::sse`,
-     * \f$ SST \f$ is `Metrics::sst`,
-     * \f$ MSE \f$ is `Metrics::mse`.
+     * where \f$ SSE \f$ is Metrics::sse,
+     * \f$ SST \f$ is Metrics::sst,
+     * \f$ MSE \f$ is Metrics::mse.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
-     * @return double 
+     * @return const double 
      */
     static const double r2(const Target& y_true, const Target& y_pred)
     {
-        return 1 - sse(y_true, y_pred) / sst(y_true);
+        return 1.0 - sse(y_true, y_pred) / sst(y_true);
     }
 
     /**
@@ -99,7 +99,7 @@ namespace Metrics
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
-     * @return double 
+     * @return const double 
      */
     static const double accuracy(const Target& y_true, const Target& y_pred)
     {
@@ -109,13 +109,13 @@ namespace Metrics
     /**
      * @brief True Positives count.
      * 
-     * \f$ \displaystyle TP = |y = 1 \cap \hat{y} = 1| \f$,
+     * \f$ \displaystyle TP = |\{y | y = 1\} \cap \{\hat{y} | \hat{y} = 1\}| \f$,
      * where \f$ y \f$ is the target vector, 
      * \f$ \hat{y} \f$ is the model's predictions vector.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
-     * @return const double 
+     * @return const size_t 
      */
     static const size_t tp_count(const Target& y_true, const Target& y_pred)
     {
@@ -125,13 +125,13 @@ namespace Metrics
     /**
      * @brief False Positives count.
      * 
-     * \f$ \displaystyle FP = |y = 0 \cap \hat{y} = 1| \f$,
+     * \f$ \displaystyle FP = |\{y | y = 0\} \cap \{\hat{y} | \hat{y} = 1\}| \f$,
      * where \f$ y \f$ is the target vector, 
      * \f$ \hat{y} \f$ is the model's predictions vector.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
-     * @return const double 
+     * @return const size_t
      */
     static const size_t fp_count(const Target& y_true, const Target& y_pred)
     {
@@ -141,13 +141,13 @@ namespace Metrics
     /**
      * @brief True Negatives count.
      * 
-     * \f$ \displaystyle TN = |y = 0 \cap \hat{y} = 0| \f$,
+     * \f$ \displaystyle TN = |\{y | y = 0\} \cap \{\hat{y} | \hat{y} = 0\}| \f$,
      * where \f$ y \f$ is the target vector, 
      * \f$ \hat{y} \f$ is the model's predictions vector.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
-     * @return const double 
+     * @return const size_t
      */
     static const size_t tn_count(const Target& y_true, const Target& y_pred)
     {
@@ -157,13 +157,13 @@ namespace Metrics
     /**
      * @brief False Negatives count.
      * 
-     * \f$ \displaystyle FN = |y = 1 \cap \hat{y} = 0| \f$,
+     * \f$ \displaystyle FN = |\{y | y = 1\} \cap \{\hat{y} | \hat{y} = 0\}| \f$,
      * where \f$ y \f$ is the target vector, 
      * \f$ \hat{y} \f$ is the model's predictions vector.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
-     * @return const double 
+     * @return const size_t
      */
     static const size_t fn_count(const Target& y_true, const Target& y_pred)
     {
@@ -175,12 +175,12 @@ namespace Metrics
      * 
      * <!-- -->             | \f$ y = 1 \f$       | \f$ y = 0 \f$
      * :------------------: | :-----------------: | :-----------------:
-     * \f$ \hat{y} = 1 \f$  | `Metrics::tp_count` | `Metrics::fp_count`
-     * \f$ \hat{y} = 0 \f$  | `Metrics::fn_count` | `Metrics::tn_count`
+     * \f$ \hat{y} = 1 \f$  | Metrics::tp_count | Metrics::fp_count
+     * \f$ \hat{y} = 0 \f$  | Metrics::fn_count | Metrics::tn_count
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
-     * @return const ConfusionMatrix 
+     * @return const Types::ConfusionMatrix
      */
     static const ConfusionMatrix confusion_matrix(const Target& y_true, const Target& y_pred)
     {
@@ -200,7 +200,7 @@ namespace Metrics
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
-     * @return const double 
+     * @return const double
      */
     static const double precision(const Target& y_true, const Target& y_pred)
     {
@@ -221,7 +221,7 @@ namespace Metrics
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
-     * @return const double 
+     * @return const double
      */
     static const double recall(const Target& y_true, const Target& y_pred)
     {
@@ -243,7 +243,7 @@ namespace Metrics
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
-     * @return const double 
+     * @return const double
      */
     static const double fpr(const Target& y_true, const Target& y_pred)
     {
@@ -262,23 +262,23 @@ namespace Metrics
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred Column vector of predicted target
-     * @return const double 
+     * @return const double
      */
     static const double f1_score(const Target& y_true, const Target& y_pred)
     {
         double prec = precision(y_true, y_pred);
         double rec = recall(y_true, y_pred);
-        double f1 = 2 * prec * rec / (prec + rec);
+        double f1 = 2.0 * prec * rec / (prec + rec);
         return f1;
     }
 
     /**
-     * @brief Compute Precision-Recall curve: `Metrics::precision` vs `Metrics::recall` for different classification thresholds.
+     * @brief Compute Precision-Recall curve: Metrics::precision vs Metrics::recall for different classification thresholds.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred_proba Column vector of predicted probabilities of positive class
      * @param num Number of thresholds
-     * @return const PrecisionsRecalls 
+     * @return const Types::PrecisionsRecalls
      */
     static const PRCurve pr_curve(const Target& y_true, const Target& y_pred_proba, const size_t num=101)
     {
@@ -296,12 +296,12 @@ namespace Metrics
     }
 
     /**
-     * @brief Compute Receiver Operating Characteristic (ROC) curve: `Metrics::recall` vs `Metrics::fpr` for different classification thresholds.
+     * @brief Compute Receiver Operating Characteristic (ROC) curve: Metrics::recall vs Metrics::fpr for different classification thresholds.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred_proba Column vector of predicted probabilities of positive class
      * @param num Number of thresholds
-     * @return const PrecisionsRecalls 
+     * @return const Types::PrecisionsRecalls
      */
     static const ROCCurve roc_curve(const Target& y_true, const Target& y_pred_proba, const size_t num=101)
     {
@@ -319,12 +319,12 @@ namespace Metrics
     }
 
     /**
-     * @brief Compute True Positives curve: `Metrics::tp_count` vs classification threshold.
+     * @brief Compute True Positives curve: Metrics::tp_count vs classification threshold.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred_proba Column vector of predicted probabilities of positive class
      * @param num Number of thresholds
-     * @return const TPs 
+     * @return const Types::TPs
      */
     static const TPs tp_curve(const Target& y_true, const Target& y_pred_proba, const size_t num=101)
     {
@@ -340,12 +340,12 @@ namespace Metrics
     }
 
     /**
-     * @brief Compute False Positives curve: `Metrics::fp_count` vs classification threshold.
+     * @brief Compute False Positives curve: Metrics::fp_count vs classification threshold.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred_proba Column vector of predicted probabilities of positive class
      * @param num Number of thresholds
-     * @return const FPs 
+     * @return const Types::FPs
      */
     static const FPs fp_curve(const Target& y_true, const Target& y_pred_proba, const size_t num=101)
     {
@@ -361,12 +361,12 @@ namespace Metrics
     }
 
     /**
-     * @brief Compute True Negatives curve: `Metrics::tn_count` vs classification threshold.
+     * @brief Compute True Negatives curve: Metrics::tn_count vs classification threshold.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred_proba Column vector of predicted probabilities of positive class
      * @param num Number of thresholds
-     * @return const TNs 
+     * @return const Types::TNs
      */
     static const TNs tn_curve(const Target& y_true, const Target& y_pred_proba, const size_t num=101)
     {
@@ -382,12 +382,12 @@ namespace Metrics
     }
 
     /**
-     * @brief Compute False Negatives curve: `Metrics::fn_count` vs classification threshold.
+     * @brief Compute False Negatives curve: Metrics::fn_count vs classification threshold.
      * 
      * @param y_true Column vector of ground truth target
      * @param y_pred_proba Column vector of predicted probabilities of positive class
      * @param num Number of thresholds
-     * @return const FNs 
+     * @return const Types::FNs
      */
     static const FNs fn_curve(const Target& y_true, const Target& y_pred_proba, const size_t num=101)
     {
@@ -403,14 +403,14 @@ namespace Metrics
     }
 
     /**
-     * @brief Area Under Curve for `Metrics::pr_curve` or `Metrics::roc_curve`.
+     * @brief Area Under Curve for Metrics::pr_curve or Metrics::roc_curve.
      * 
      * \f$ \displaystyle AUC_{PR} = \int_{0}^{1} Precision(Recall) \mathrm{d}Recall \f$
      * 
      * \f$ \displaystyle AUC_{ROC} = \int_{0}^{1} Recall(Fallout) \mathrm{d}Fallout \f$
      * 
-     * @param pair PRCurve or ROCCurve (arma::drowvec)
-     * @return const double 
+     * @param pair Metrics::PRCurve or Metrics::ROCCurve (arma::drowvec)
+     * @return const double
      */
     static const double auc(const std::pair<const arma::drowvec, const arma::drowvec>& pair)
     {
