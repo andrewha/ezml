@@ -5,7 +5,8 @@ echo "Building the library object files..."
 mkdir -p ./bin/static
 TARGET="./bin/static"
 
-# -O3 -- max speed optimization
+# -O3: max speed optimization
+# -ffast-math: math optimization, again for speed
 
 CFLAGS="-fdiagnostics-color=always -c -g -O3 -ffast-math -std=c++17 -Wall"
 INCLUDE="./include"
